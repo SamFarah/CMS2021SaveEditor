@@ -1,0 +1,110 @@
+﻿@model CMSEditor.Models.CMSSave
+
+@{
+    ViewBag.Title = "ViewSave";
+}
+
+<h2>ViewSave</h2>
+
+<div>
+    <h4>CMSSave</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+            @{Html.RenderPartial("ViewSaveGlobalDataWrapper", Model.globalDataWrapper); }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastSave)
+        </dt>
+
+        <dd>
+            @(DateTimeOffset.FromUnixTimeSeconds(Model.LastSave).DateTime.ToLocalTime())
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayTime)
+        </dt>
+
+        <dd>
+            @( TimeSpan.FromMinutes(Model.PlayTime).TotalHours.ToString("0.00")) Hours
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BestRaceTime)
+        </dt>
+
+        <dd>
+            @(TimeSpan.FromMilliseconds(Model.BestRaceTime).ToString("hh':'mm':'ss'.'ff"))
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopSpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopSpeed) KM/h
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildVersion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishedTutorial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishedTutorial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Difficulty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Difficulty)
+        </dd>
+
+        <dt>Cars In Garage:</dt>
+        <dd>
+            @(Model.carsInGarage.Where(x => !string.IsNullOrEmpty(x.carToLoad)).Count())
+            @{
+                ViewBag.carLoaderData = Model.carLoaderData;
+                ViewBag.CarLocation = "Garage";
+                Html.RenderPartial("CarList", Model.carsInGarage.Where(x => !string.IsNullOrEmpty(x.carToLoad)));
+            }
+        </dd>
+
+        <dt>Cars In Parking:</dt>
+        <dd>
+            @(Model.carsOnParking.Where(x => !string.IsNullOrEmpty(x.carToLoad)).Count())
+            @{ ViewBag.carLoaderData = null;
+                ViewBag.CarLocation = "Parking";
+                Html.RenderPartial("CarList", Model.carsOnParking.Where(x => !string.IsNullOrEmpty(x.carToLoad)));
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Upload New Save", "Index")
+</p>

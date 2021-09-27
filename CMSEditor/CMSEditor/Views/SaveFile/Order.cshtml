@@ -1,0 +1,202 @@
+﻿@model CMSEditor.Models.Job
+
+@{
+    ViewBag.Title = "Order";
+}
+
+<h2>Order</h2>
+
+<div>
+    <h4>Job</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.carLoaderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carLoaderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.forXP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forXP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.configVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.configVersion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.timeToEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.timeToEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobPartsCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobPartsCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mileage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mileage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.globalCondition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.globalCondition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.otherPartsCondition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.otherPartsCondition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BonusToExp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BonusToExp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BonusToMoney)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BonusToMoney)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalizationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalizationID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMission)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMission)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MissionID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MissionID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconTypeEngine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconTypeEngine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconTypeTiming)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconTypeTiming)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconTypeSuspension)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconTypeSuspension)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconTypeBrakes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconTypeBrakes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconTypeExhaust)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconTypeExhaust)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconTypeGearbox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconTypeGearbox)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconTypeOil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconTypeOil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconTypeBody)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconTypeBody)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconTypeTuning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconTypeTuning)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Upload")
+</p>

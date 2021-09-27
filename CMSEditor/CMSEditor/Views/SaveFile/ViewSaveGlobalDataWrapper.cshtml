@@ -1,0 +1,73 @@
+﻿@model CMSEditor.Models.GlobalDataWrapper
+
+<div>    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerMoney)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerMoney)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerLevel)
+        </dt>
+
+        <dd>
+            @(Model.PlayerLevel+1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerExp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerExp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerScraps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerScraps)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BarnsAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarnsAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MissionsFinished)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MissionsFinished)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentMissionDone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentMissionDone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnlockedParkingLevels)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnlockedParkingLevels)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) 
+</p>

@@ -1,0 +1,106 @@
+﻿@model CMSEditor.Models.Car
+
+@{
+    ViewBag.Title = "Car";
+}
+
+<h2>Car</h2>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.carToLoad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carToLoad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.index)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerCar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerCar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderConnection)
+        </dt>
+
+        <dd>
+            @(Model.orderConnection > 0 ? Html.ActionLink(Model.orderConnection.ToString(), "ViewOrder", new { id = Model.orderConnection }) : Html.Raw(string.Empty))            
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.engineSwap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.engineSwap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.configVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.configVersion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.finalDriveRatio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.finalDriveRatio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LightsOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LightsOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasCustomPaintType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasCustomPaintType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalCarRot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalCarRot)
+        </dd>
+
+        <dt>Body Parts</dt>
+        <dd>
+            @{Html.RenderPartial("ViewBodyParts", Model.BodyPartsData);}
+        </dd>
+
+        <dt>Parts</dt>
+        <dd>@{Html.RenderPartial("ViewParts", Model.PartData);}</dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Upload")
+</p>

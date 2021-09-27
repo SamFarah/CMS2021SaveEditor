@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CMSEditor.Models.Car>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-centeredHeader">
+    <tr>
+        <th>Index</th>
+        <th>
+            @Html.DisplayNameFor(model => model.carToLoad)
+        </th>
+        @{if (ViewBag.carLoaderData != null)
+            {
+                <th>Position</th>}
+        }
+        <th>
+            @Html.DisplayNameFor(model => model.customerCar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderConnection)
+        </th>
+        <th colspan="3">Action</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.index)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carToLoad)
+            </td>
+            @{
+                if (ViewBag.carLoaderData != null)
+                {
+                    <td>
+                        @{ var a = EnumHelper<CMSEditor.Models.GaragePosition>
+                 .GetDisplayValue(ViewBag.carLoaderData.position[item.index]);
+                @Html.DisplayFor(e => a);
+                        }
+                    </td>
+                }
+            }
+
+            <td>
+                @(item.customerCar ? "Yes" : "No")
+            </td>
+            <td>
+                @(item.orderConnection > 0 ? Html.ActionLink("Order Details", "ViewOrder", new { id = item.orderConnection }) : Html.Raw(string.Empty))
+            </td>
+            <td>@Html.ActionLink("Car Details", "ViewCar", new {  id=item.index ,CarLocation=ViewBag.CarLocation}) </td>
+            <td>
+                @(item.customerCar ? Html.Raw("") : Html.ActionLink("Edit Car", "Edit", new { /* id=item.PrimaryKey */ }) )
+            </td>
+            <td>
+                @(item.customerCar ? Html.Raw("") : Html.ActionLink("Delete Car", "Delete", new { /* id=item.PrimaryKey */ }) )
+        </td>
+    </tr>
+}
+
+</table>

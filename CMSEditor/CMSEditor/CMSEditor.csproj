@@ -117,13 +117,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppCode\Common.cs" />
+    <Compile Include="AppCode\EnumHelper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SaveFileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CMSSave.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,10 +166,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\SaveFile\ViewSave.cshtml" />
+    <Content Include="Views\SaveFile\ViewSaveGlobalDataWrapper.cshtml" />
+    <Content Include="Views\SaveFile\CarList.cshtml" />
+    <Content Include="Views\SaveFile\Order.cshtml" />
+    <Content Include="Views\SaveFile\Car.cshtml" />
+    <Content Include="Views\SaveFile\ViewBodyParts.cshtml" />
+    <Content Include="Views\SaveFile\ViewParts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

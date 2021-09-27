@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CMSEditor.Models.Part>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Path)
+        </th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Examined)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Condition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unmounted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TunedID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsPainted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaintType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dust)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Path)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name )
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Examined)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Condition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unmounted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TunedIDName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsPainted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaintType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dust)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

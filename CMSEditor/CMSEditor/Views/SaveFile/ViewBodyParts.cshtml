@@ -1,0 +1,97 @@
+﻿@model IEnumerable<CMSEditor.Models.Bodypart>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id )
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Switched)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Condition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unmounted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TunedID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaintType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Livery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LiveryStrength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutsaidRustEnabled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dust)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WashFactor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id )
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Switched)
+        </td>
+        <td>
+            @(item.Condition.ToString("P"))
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unmounted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TunedID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaintType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Livery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LiveryStrength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutsaidRustEnabled)
+        </td>
+        <td>
+            @(item.Dent.ToString("P"))
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quality)
+        </td>
+        <td>
+            @(item.Dust.ToString("P"))
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WashFactor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
